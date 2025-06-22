@@ -2,6 +2,17 @@
 
 Bu proje Laravel 12 ve Filament kullanılarak oluşturulmuş tam yönetilebilir bir e-ticaret sitesi örneğidir.
 
+```
+solmatek/
+├── app/               # Laravel uygulaması
+├── public/            # cPanel'de public_html altına taşınır
+├── resources/         # Blade ve Tailwind dosyaları
+├── routes/            # Uygulama rotaları
+└── ...
+```
+
+Yönetim paneline `/adminPanel` adresinden erişebilirsiniz.
+
 ## Kurulum
 
 1. PHP ve Composer kurulu olduğundan emin olun.
@@ -19,7 +30,11 @@ php artisan key:generate
 ```bash
 php artisan migrate --seed
 ```
-5. Geliştirme sunucusunu başlatmak için:
+5. Yönetim paneline giriş için bir kullanıcı oluşturun:
+```bash
+php artisan make:filament-user --name="Admin" --email=admin@example.com --password=123456 --no-interaction
+```
+6. Geliştirme sunucusunu başlatmak için:
 ```bash
 php artisan serve
 ```
