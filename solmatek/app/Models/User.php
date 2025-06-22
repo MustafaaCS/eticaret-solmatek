@@ -45,4 +45,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Kullanıcının bayi profili.
+     */
+    public function b2bProfile()
+    {
+        return $this->hasOne(B2BProfile::class);
+    }
 }

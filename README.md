@@ -13,6 +13,12 @@ solmatek/
 
 Yönetim paneline `/adminPanel` adresinden erişebilirsiniz.
 
+## B2B Özellikleri
+
+- Bayi profili oluşturma ve onay süreci
+- Ürüne özel bayi fiyatı tanımlayabilme
+- Fiyatlar yalnızca onaylı bayilere gösterilir
+
 ## Kurulum
 
 1. PHP ve Composer kurulu olduğundan emin olun.

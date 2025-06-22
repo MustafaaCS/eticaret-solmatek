@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             ProductSeeder::class,
+            B2BProfileSeeder::class,
+            B2BPriceSeeder::class,
         ]);
     }
 }

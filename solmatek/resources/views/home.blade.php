@@ -30,7 +30,18 @@
                     <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->title }}" class="h-32 mx-auto mb-2">
                 @endif
                 <h3 class="font-medium">{{ $product->title }}</h3>
-                <p class="text-sm text-gray-600">{{ $product->price }} TL</p>
+                @php
+                    $showPrice = false;
+                    if(auth()->check() && auth()->user()->b2bProfile && auth()->user()->b2bProfile->status === 'onayli' && auth()->user()->b2bProfile->show_prices) {
+                        $showPrice = true;
+                        $special = $product->priceForB2B(auth()->user()->b2bProfile);
+                    }
+                @endphp
+                @if($showPrice)
+                    <p class="text-sm text-gray-600">{{ $special ?? $product->price }} TL</p>
+                @else
+                    <p class="text-sm text-gray-600">Fiyat görmek için giriş yapın</p>
+                @endif
             </div>
         @endforeach
     </div>
