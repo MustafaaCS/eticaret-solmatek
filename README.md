@@ -52,3 +52,8 @@ php artisan serve
 Uygulama `http://localhost:8000` adresinde çalışacaktır.
 
 Proje kodlari `solmatek` klasorundedir. cPanel'de `public_html` altina bu klasordeki `public` dizinini tasiyarak yayina alabilirsiniz.
+
+## Yayına Hazırlık ve Test
+- `php artisan test` komutu ile testleri çalıştırın.
+- Ortam değişkenlerinde veritabanı ve Garanti BBVA Sanal POS bilgilerinin doğru olduğundan emin olun.
+- Testler başarılı ise proje yayına hazırdır.
