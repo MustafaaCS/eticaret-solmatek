@@ -28,23 +28,31 @@ Yönetim paneline `/adminPanel` adresinden erişebilirsiniz.
 cd solmatek
 composer install
 ```
-3. Ortam dosyasını kopyalayıp uygulama anahtarını oluşturun:
+3. Ön yüz dosyaları için Node paketlerini yükleyin:
+```bash
+npm install
+```
+Ardından üretim için derleme yapın:
+```bash
+npm run build
+```
+4. Ortam dosyasını kopyalayıp uygulama anahtarını oluşturun:
 ```bash
 cp .env.example .env
 php artisan key:generate
 ```
-4. Veritabanını hazırlayıp örnek verileri yükleyin:
+5. Veritabanını hazırlayıp örnek verileri yükleyin:
 ```bash
 php artisan migrate --seed
 ```
 Eğer komut satırına erişiminiz yoksa `solmatek/online_migrate.php` dosyasını
 tarayıcıdan çalıştırarak migrasyonları otomatik olarak gerçekleştirebilirsiniz.
 Kullanımdan sonra güvenlik için bu dosyayı silmeyi unutmayın.
-5. Yönetim paneline giriş için bir kullanıcı oluşturun:
+6. Yönetim paneline giriş için bir kullanıcı oluşturun:
 ```bash
 php artisan make:filament-user --name="Admin" --email=admin@example.com --password=123456 --no-interaction
 ```
-6. Geliştirme sunucusunu başlatmak için:
+7. Geliştirme sunucusunu başlatmak için:
 ```bash
 php artisan serve
 ```
@@ -54,6 +62,17 @@ Uygulama `http://localhost:8000` adresinde çalışacaktır.
 Proje kodlari `solmatek` klasorundedir. cPanel'de `public_html` altina bu klasordeki `public` dizinini tasiyarak yayina alabilirsiniz.
 
 ## Yayına Hazırlık ve Test
-- `php artisan test` komutu ile testleri çalıştırın.
-- Ortam değişkenlerinde veritabanı ve Garanti BBVA Sanal POS bilgilerinin doğru olduğundan emin olun.
-- Testler başarılı ise proje yayına hazırdır.
+Projeyi canlıya almadan önce aşağıdaki adımları izleyin:
+
+1. Testleri çalıştırın:
+```bash
+php artisan test
+```
+2. Ön yüz dosyalarını üretim için derleyin:
+```bash
+npm run build
+```
+3. `.env` dosyasında veritabanı ve Garanti BBVA POS bilgilerinin doğru olduğundan emin olun.
+4. `online_migrate.php` dosyasını kullandıysanız yayın öncesi silin.
+5. `storage` ve `bootstrap/cache` klasörlerinin yazılabilir olduğundan emin olun.
+Tüm adımlar tamamlandığında proje yayına hazırdır.
