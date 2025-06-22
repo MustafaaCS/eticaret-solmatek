@@ -20,6 +20,13 @@ Yönetim paneline `/adminPanel` adresinden erişebilirsiniz.
 - Fiyatlar yalnızca onaylı bayilere gösterilir
 - Sipariş ve sipariş kalemi yönetimi
 
+
+## Diğer Özellikler
+- Ürün ve kategori yönetimi
+- Garanti BBVA POS entegrasyonu (örnek yapı)
+- Admin panelde tüm içerikleri kontrol etme
+- Uçan WhatsApp butonu
+- Paylaşımı kolay online_migrate.php ile tek tuşla migrasyon
 ## Kurulum
 
 1. PHP ve Composer kurulu olduğundan emin olun.
@@ -76,3 +83,4 @@ npm run build
 4. `online_migrate.php` dosyasını kullandıysanız yayın öncesi silin.
 5. `storage` ve `bootstrap/cache` klasörlerinin yazılabilir olduğundan emin olun.
 Tüm adımlar tamamlandığında proje yayına hazırdır.
+Tüm testler başarıyla geçtiğinde ve yapılandırmalar doğruysa siteyi canlıya alabilirsiniz.
