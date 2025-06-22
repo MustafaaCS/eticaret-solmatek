@@ -13,6 +13,11 @@ class B2BProfile extends Model
 {
     use HasFactory, SoftDeletes;
 
+    /**
+     * Tablo adı model ismi ile uyuşmadığından manuel tanımlıyoruz.
+     */
+    protected $table = 'b2b_profiles';
+
     protected $fillable = [
         'user_id',
         'company_name',

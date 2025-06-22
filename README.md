@@ -18,6 +18,7 @@ Yönetim paneline `/adminPanel` adresinden erişebilirsiniz.
 - Bayi profili oluşturma ve onay süreci
 - Ürüne özel bayi fiyatı tanımlayabilme
 - Fiyatlar yalnızca onaylı bayilere gösterilir
+- Sipariş ve sipariş kalemi yönetimi
 
 ## Kurulum
 

@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             B2BProfileSeeder::class,
             B2BPriceSeeder::class,
+            OrderSeeder::class,
         ]);
     }
 }
