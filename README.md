@@ -36,6 +36,9 @@ php artisan key:generate
 ```bash
 php artisan migrate --seed
 ```
+Eğer komut satırına erişiminiz yoksa `solmatek/online_migrate.php` dosyasını
+tarayıcıdan çalıştırarak migrasyonları otomatik olarak gerçekleştirebilirsiniz.
+Kullanımdan sonra güvenlik için bu dosyayı silmeyi unutmayın.
 5. Yönetim paneline giriş için bir kullanıcı oluşturun:
 ```bash
 php artisan make:filament-user --name="Admin" --email=admin@example.com --password=123456 --no-interaction
