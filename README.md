@@ -1,17 +1,29 @@
-# Eticaret Solmatek
+# Solmatek Makina E-Ticaret Sitesi
 
-Bu depo, Express tabanlı basit bir e-ticaret projesi örneği içerir. "server.js" dosyasını çalıştırarak temel site ve /admin sayfasını görüntüleyebilirsiniz. 
+Bu proje Laravel 12 ve Filament kullanılarak oluşturulmuş tam yönetilebilir bir e-ticaret sitesi örneğidir.
 
 ## Kurulum
 
-1. Node.js kurulu olduğundan emin olun.
-2. Gerekli paketleri yüklemek için:
+1. PHP ve Composer kurulu olduğundan emin olun.
+2. Laravel bağımlılıklarını yüklemek için:
 ```bash
-npm install
+cd solmatek
+composer install
 ```
-3. Uygulamayı başlatmak için:
+3. Ortam dosyasını kopyalayıp uygulama anahtarını oluşturun:
 ```bash
-npm start
+cp .env.example .env
+php artisan key:generate
+```
+4. Veritabanını hazırlayıp örnek verileri yükleyin:
+```bash
+php artisan migrate --seed
+```
+5. Geliştirme sunucusunu başlatmak için:
+```bash
+php artisan serve
 ```
 
-Sunucu varsayılan olarak `http://localhost:3000` adresinde çalışır.
+Uygulama `http://localhost:8000` adresinde çalışacaktır.
+
+Proje kodlari `solmatek` klasorundedir. cPanel'de `public_html` altina bu klasordeki `public` dizinini tasiyarak yayina alabilirsiniz.
